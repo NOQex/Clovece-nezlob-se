@@ -20,6 +20,24 @@ namespace Hra_člověče_nezlob_se
         public Form1()
         {
             InitializeComponent();
+            VytvorHerniPlochu();
+        }
+
+        private void VytvorHerniPlochu()
+        {
+            int x = 20;
+            for (int i = 0; i < 20; i++)
+            {
+                Button btn = new Button();
+                btn.Width = 40;
+                btn.Height = 40;
+                btn.Left = x;
+                btn.Top = 100;
+                btn.Text = (i + 1).ToString();
+                this.Controls.Add(btn);
+                herniPole.Add(btn);
+                x += 45;
+            }
         }
 
 
@@ -27,6 +45,7 @@ namespace Hra_člověče_nezlob_se
         {
             int cislo = random.Next(1, 7);
             lblkostka.Text = "Hodil jsi: " + cislo;
+
 
             if (!hrac.JeNaDesce)
             {
@@ -47,7 +66,10 @@ namespace Hra_člověče_nezlob_se
         {
             // Vyčistí barvy
             foreach (var b in herniPole)
+            {
                 b.BackColor = SystemColors.Control;
+            }
+
 
             // zvýrazní pozici hráče
             if (hrac.JeNaDesce && hrac.Pozice < herniPole.Count)
