@@ -8,7 +8,7 @@ namespace Hra_člověče_nezlob_se
 {
     internal class Hrac
     {
-        public int Pozice { get; set; } = -1; // -1 znamená, že figurka není na herní desce
+        public int Pozice { get; set; } = -1; //-1 znamená že figurka není v herním poli
         public bool JeNaDesce => Pozice >= 0;
 
         public void Nasadit()
@@ -19,7 +19,10 @@ namespace Hra_člověče_nezlob_se
         public void Posunout(int pocetPoli)
         {
             if (JeNaDesce)
+            {
                 Pozice += pocetPoli;
+            }
+
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Hra_člověče_nezlob_se
         private void VytvorHerniPlochu()
         {
             int x = 20;
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 20; i++) //vytvoří podle parametrů políčko
             {
                 Button btn = new Button();
                 btn.Width = 40;
@@ -35,7 +35,7 @@ namespace Hra_člověče_nezlob_se
                 btn.Top = 100;
                 btn.Text = (i + 1).ToString();
                 this.Controls.Add(btn);
-                herniPole.Add(btn);
+                herniPole.Add(btn); //uloží ho na formulář
                 x += 45;
             }
         }
@@ -47,7 +47,7 @@ namespace Hra_člověče_nezlob_se
             lblkostka.Text = "Hodil jsi: " + cislo;
 
 
-            if (!hrac.JeNaDesce)
+            if (!hrac.JeNaDesce)//nasadí se do hřiště
             {
                 if (cislo == 6)
                 {
@@ -57,23 +57,23 @@ namespace Hra_člověče_nezlob_se
             }
             else
             {
-                hrac.Posunout(cislo);
+                hrac.Posunout(cislo);//posune se v poli
                 AktualizujBarvy();
             }
         }
 
         private void AktualizujBarvy()
         {
-            // Vyčistí barvy
-            foreach (var b in herniPole)
+            foreach (var b in herniPole) //vyresetuje barvu
             {
                 b.BackColor = SystemColors.Control;
             }
 
-
-            // zvýrazní pozici hráče
-            if (hrac.JeNaDesce && hrac.Pozice < herniPole.Count)
+            if (hrac.JeNaDesce && hrac.Pozice < herniPole.Count) //nastaví barvu políčka kde stojí fygurka
+            {
                 herniPole[hrac.Pozice].BackColor = Color.Red;
+            }
+
         }
 
 
