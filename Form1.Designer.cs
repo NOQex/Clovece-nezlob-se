@@ -30,6 +30,7 @@
         {
             this.btnHodKostkou = new System.Windows.Forms.Button();
             this.lblkostka = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnHodKostkou
@@ -50,11 +51,20 @@
             this.lblkostka.Size = new System.Drawing.Size(0, 16);
             this.lblkostka.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(26, 122);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(54, 51);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1393, 252);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblkostka);
             this.Controls.Add(this.btnHodKostkou);
             this.Name = "Form1";
@@ -68,6 +78,7 @@
 
         private System.Windows.Forms.Button btnHodKostkou;
         private System.Windows.Forms.Label lblkostka;
+        private System.Windows.Forms.Button button1;
     }
 }
 

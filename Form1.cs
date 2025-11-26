@@ -14,7 +14,8 @@ namespace Hra_člověče_nezlob_se
     public partial class Form1 : Form
     {
         private Random random = new Random();
-        private List<Button> herniPole = new List<Button>();
+        private Point[] herniPole;   // pole souřadnic jednotlivých políček
+        private PictureBox figurka;
         private Hrac hrac = new Hrac();
 
         public Form1()
@@ -24,20 +25,22 @@ namespace Hra_člověče_nezlob_se
         }
 
         private void VytvorHerniPlochu()
-        {
+        {          
+            herniPole = new Point[20];
+
             int x = 20;
-            for (int i = 0; i < 20; i++) //vytvoří podle parametrů políčko
+            for (int i = 0; i < 20; i++)
             {
-                Button btn = new Button();
-                btn.Width = 40;
-                btn.Height = 40;
-                btn.Left = x;
-                btn.Top = 100;
-                btn.Text = (i + 1).ToString();
-                this.Controls.Add(btn);
-                herniPole.Add(btn); //uloží ho na formulář
+                herniPole[i] = new Point(x, 100); // X a Y pozice pro figurku
                 x += 45;
             }
+
+            figurka = new PictureBox();
+            figurka.Width = 40;
+            figurka.Height = 40;
+            figurka.BackColor = Color.Red;
+            figurka.Visible = false;
+            this.Controls.Add(figurka);      
         }
 
 
@@ -46,35 +49,35 @@ namespace Hra_člověče_nezlob_se
             int cislo = random.Next(1, 7);
             lblkostka.Text = "Hodil jsi: " + cislo;
 
-
-            if (!hrac.JeNaDesce)//nasadí se do hřiště
+            if (!hrac.JeNaDesce)
             {
                 if (cislo == 6)
                 {
                     hrac.Nasadit();
-                    AktualizujBarvy();
+                    AktualizujFigurku();
                 }
             }
             else
             {
-                hrac.Posunout(cislo);//posune se v poli
-                AktualizujBarvy();
+                hrac.Posunout(cislo);
+                AktualizujFigurku();
             }
         }
 
-        private void AktualizujBarvy()
+
+        private void AktualizujFigurku()
         {
-            foreach (var b in herniPole) //vyresetuje barvu
+            if (hrac.JeNaDesce && hrac.Pozice < herniPole.Length)
             {
-                b.BackColor = SystemColors.Control;
+                figurka.Visible = true;
+                figurka.Location = herniPole[hrac.Pozice];
             }
-
-            if (hrac.JeNaDesce && hrac.Pozice < herniPole.Count) //nastaví barvu políčka kde stojí fygurka
+            else
             {
-                herniPole[hrac.Pozice].BackColor = Color.Red;
+                figurka.Visible = false;
             }
-
         }
+
 
 
     }

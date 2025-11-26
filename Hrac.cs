@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Hra_člověče_nezlob_se
 {
-    internal class Hrac
+    public class Hrac
     {
-        public int Pozice { get; set; } = -1; //-1 znamená že figurka není v herním poli
+        public int Pozice { get; set; } = -1;
         public bool JeNaDesce => Pozice >= 0;
 
         public void Nasadit()
@@ -19,10 +19,8 @@ namespace Hra_člověče_nezlob_se
         public void Posunout(int pocetPoli)
         {
             if (JeNaDesce)
-            {
                 Pozice += pocetPoli;
-            }
-
         }
     }
+
 }
