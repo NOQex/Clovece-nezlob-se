@@ -28,47 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnHodKostkou = new System.Windows.Forms.Button();
-            this.lblkostka = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnHodit = new System.Windows.Forms.Button();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.pictureBoxDeska = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeska)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnHodKostkou
+            // btnHodit
             // 
-            this.btnHodKostkou.Location = new System.Drawing.Point(12, 12);
-            this.btnHodKostkou.Name = "btnHodKostkou";
-            this.btnHodKostkou.Size = new System.Drawing.Size(108, 57);
-            this.btnHodKostkou.TabIndex = 0;
-            this.btnHodKostkou.Text = "Kostka";
-            this.btnHodKostkou.UseVisualStyleBackColor = true;
-            this.btnHodKostkou.Click += new System.EventHandler(this.btnHodKostkou_Click);
+            this.btnHodit.Location = new System.Drawing.Point(750, 100);
+            this.btnHodit.Name = "btnHodit";
+            this.btnHodit.Size = new System.Drawing.Size(100, 50);
+            this.btnHodit.TabIndex = 1;
+            this.btnHodit.Text = "Kostka";
+            this.btnHodit.UseVisualStyleBackColor = true;
+            this.btnHodit.Click += new System.EventHandler(this.btnHodit_Click);
             // 
-            // lblkostka
+            // lblInfo
             // 
-            this.lblkostka.AutoSize = true;
-            this.lblkostka.Location = new System.Drawing.Point(126, 32);
-            this.lblkostka.Name = "lblkostka";
-            this.lblkostka.Size = new System.Drawing.Size(0, 16);
-            this.lblkostka.TabIndex = 1;
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Location = new System.Drawing.Point(750, 10);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(59, 16);
+            this.lblInfo.TabIndex = 1;
+            this.lblInfo.Text = "Na řadě:";
             // 
-            // button1
+            // pictureBoxDeska
             // 
-            this.button1.Location = new System.Drawing.Point(26, 122);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 51);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
+            this.pictureBoxDeska.Location = new System.Drawing.Point(10, 10);
+            this.pictureBoxDeska.Name = "pictureBoxDeska";
+            this.pictureBoxDeska.Size = new System.Drawing.Size(600, 600);
+            this.pictureBoxDeska.TabIndex = 2;
+            this.pictureBoxDeska.TabStop = false;
+            this.pictureBoxDeska.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxDeska_Paint);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1393, 252);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblkostka);
-            this.Controls.Add(this.btnHodKostkou);
+            this.ClientSize = new System.Drawing.Size(1082, 653);
+            this.Controls.Add(this.pictureBoxDeska);
+            this.Controls.Add(this.lblInfo);
+            this.Controls.Add(this.btnHodit);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Člověče nezlob se";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeska)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,9 +80,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnHodKostkou;
-        private System.Windows.Forms.Label lblkostka;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHodit;
+        private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.PictureBox pictureBoxDeska;
     }
 }
 
