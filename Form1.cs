@@ -30,7 +30,18 @@ namespace Hra_člověče_nezlob_se
 
         private void btnHodit_Click(object sender, EventArgs e)
         {
+            int hod = kostka.Next(1, 7); //hod kostkou 1-6         
+            string jmenoHrace = hra.Hraci[hra.HracNaRadeIndex].Jmeno; //získání hráče PŘED tahem pro zobrazení
+            hra.ProvestTah(hod); //volání logiki hry
 
+            lblInfo.Text = $"{jmenoHrace} hodil {hod}."; //aktualizace info štítku
+            if (hod == 6)
+            {
+                lblInfo.Text += " Hází znovu";
+            }
+            lblInfo.Text += $" Na řadě: {hra.Hraci[hra.HracNaRadeIndex].Jmeno}";
+
+            pictureBoxDeska.Invalidate(); //zavolá metodu aby se překreslil
         }
 
         private void AktualizujInfoLabel()
