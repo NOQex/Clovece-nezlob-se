@@ -36,9 +36,9 @@
             // 
             // btnHodit
             // 
-            this.btnHodit.Location = new System.Drawing.Point(750, 100);
+            this.btnHodit.Location = new System.Drawing.Point(700, 200);
             this.btnHodit.Name = "btnHodit";
-            this.btnHodit.Size = new System.Drawing.Size(100, 50);
+            this.btnHodit.Size = new System.Drawing.Size(150, 75);
             this.btnHodit.TabIndex = 1;
             this.btnHodit.Text = "Kostka";
             this.btnHodit.UseVisualStyleBackColor = true;
@@ -46,11 +46,11 @@
             // 
             // lblInfo
             // 
-            this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(750, 10);
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblInfo.Location = new System.Drawing.Point(700, 10);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(59, 16);
-            this.lblInfo.TabIndex = 1;
+            this.lblInfo.Size = new System.Drawing.Size(122, 30);
+            this.lblInfo.TabIndex = 2;
             this.lblInfo.Text = "Na řadě:";
             // 
             // pictureBoxDeska
@@ -70,11 +70,12 @@
             this.Controls.Add(this.pictureBoxDeska);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.btnHodit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Člověče nezlob se";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeska)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
