@@ -36,9 +36,9 @@
             // 
             // btnHodit
             // 
-            this.btnHodit.Location = new System.Drawing.Point(700, 200);
+            this.btnHodit.Location = new System.Drawing.Point(900, 220);
             this.btnHodit.Name = "btnHodit";
-            this.btnHodit.Size = new System.Drawing.Size(150, 75);
+            this.btnHodit.Size = new System.Drawing.Size(300, 150);
             this.btnHodit.TabIndex = 1;
             this.btnHodit.Text = "Kostka";
             this.btnHodit.UseVisualStyleBackColor = true;
@@ -46,15 +46,18 @@
             // 
             // lblInfo
             // 
+            this.lblInfo.AutoSize = true;
             this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblInfo.Location = new System.Drawing.Point(700, 10);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(122, 30);
+            this.lblInfo.Size = new System.Drawing.Size(122, 32);
             this.lblInfo.TabIndex = 2;
             this.lblInfo.Text = "Na řadě:";
             // 
             // pictureBoxDeska
             // 
+            this.pictureBoxDeska.BackColor = System.Drawing.Color.White;
+            this.pictureBoxDeska.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxDeska.Location = new System.Drawing.Point(10, 10);
             this.pictureBoxDeska.Name = "pictureBoxDeska";
             this.pictureBoxDeska.Size = new System.Drawing.Size(600, 600);
@@ -66,16 +69,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1082, 653);
+            this.ClientSize = new System.Drawing.Size(1482, 653);
             this.Controls.Add(this.pictureBoxDeska);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.btnHodit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Člověče nezlob se";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeska)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
