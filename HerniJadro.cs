@@ -171,5 +171,10 @@ namespace Hra_člověče_nezlob_se
         {
             return Hraci.First(h => h.ID == hracID).Figurky.Count(f => f.UjitaVzdalenost == -1); // najde hráče dle ID a spočítá, kolik jeho figurek má v domečku
         }
+
+        public Hrac ZkontrolujViteze()
+        {
+            return Hraci.FirstOrDefault(h => h.Figurky.All(f => f.UjitaVzdalenost >= PocetPoli)); // najde prvního hráče, který má všechny své figurky v cílovém domečku
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace Hra_člověče_nezlob_se
         private HerniJadro hra;
         private Random kostka;
         private Point[] mapaCesty; // pole pro trasu herní desky
+        private bool vitezVyhlasen = false;
 
         public Form1()
         {
@@ -102,6 +103,17 @@ namespace Hra_člověče_nezlob_se
             lblInfo.Text += $"Na řadě: {hra.Hraci[hra.HracNaRadeIndex].Jmeno}"; // zobrazí který hráč je na řadě
 
             pictureBoxDeska.Invalidate(); // vypne překreslování
+
+            if (!vitezVyhlasen) // ptá se jen pokud ještě nikdo nevyhrál
+            {
+                var vitez = hra.ZkontrolujViteze();
+                if (vitez != null)
+                {
+                    MessageBox.Show($"Gratulujeme!\n\n První místo získává {vitez.Jmeno} hráč!", "Máme vítěze", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    vitezVyhlasen = true;
+                }
+            }
         }
 
         private void AktualizujInfoLabel()
